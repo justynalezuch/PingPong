@@ -14,4 +14,48 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 {
 }
 //---------------------------------------------------------------------------
- 
+
+void __fastcall TForm1::up1Timer(TObject *Sender)
+{
+        paddle1->Top -= 10;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::down1Timer(TObject *Sender)
+{
+        paddle1->Top += 10;
+}
+
+//---------------------------------------------------------------------------
+void __fastcall TForm1::up2Timer(TObject *Sender)
+{
+        paddle2->Top -= 10;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::down2Timer(TObject *Sender)
+{
+        paddle2->Top += 10;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
+      TShiftState Shift)
+{
+        if(Key == 65) up1->Enabled = true;
+        if(Key == 90) down1->Enabled = true;
+
+        if(Key == VK_UP) up2->Enabled = true;
+         if(Key == VK_DOWN) down2->Enabled = true;
+
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::FormKeyUp(TObject *Sender, WORD &Key,
+      TShiftState Shift)
+{
+        if(Key == 65) up1->Enabled = false;
+        if(Key == 90) down1->Enabled = false;
+
+          if(Key == VK_UP) up2->Enabled = false;
+         if(Key == VK_DOWN) down2->Enabled = false;
+
+}
+
+//---------------------------------------------------------------------------
