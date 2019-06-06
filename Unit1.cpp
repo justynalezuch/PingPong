@@ -8,6 +8,10 @@
 #pragma package(smart_init)
 #pragma resource "*.dfm"
 TForm1 *Form1;
+
+int x = -8;
+int y = 8;
+
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
         : TForm(Owner)
@@ -60,3 +64,26 @@ void __fastcall TForm1::FormKeyUp(TObject *Sender, WORD &Key,
 }
 
 //---------------------------------------------------------------------------
+void __fastcall TForm1::timer_ballTimer(TObject *Sender)
+{
+        ball->Left += x;
+        ball->Top += y;
+
+        //top
+        if(ball->Top-5 <= background->Top) y = -y;
+
+        //bottom
+        if ((ball->Top + ball->Height +5 ) >= background->Height ){
+              y = -y;
+        }
+
+        //loss
+        if(ball->Left >= paddle2->Left+paddle2->Width+15 || ball->Left <= paddle1->Left-paddle1->Width-15)
+        {
+                timer_ball->Enabled = true;
+                ball->Visible = false;
+
+        }
+}
+//---------------------------------------------------------------------------
+
