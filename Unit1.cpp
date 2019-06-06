@@ -17,23 +17,24 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 
 void __fastcall TForm1::up1Timer(TObject *Sender)
 {
-        paddle1->Top -= 10;
+        if(paddle1->Top > 10 )paddle1->Top -= 10;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::down1Timer(TObject *Sender)
 {
-        paddle1->Top += 10;
+        if( (paddle1->Top + paddle1->Height) < (background->Height - 10)) paddle1->Top += 10;
 }
 
 //---------------------------------------------------------------------------
 void __fastcall TForm1::up2Timer(TObject *Sender)
 {
-        paddle2->Top -= 10;
+        if(paddle2->Top > 10 )paddle2->Top -= 10;
 }
+
 //---------------------------------------------------------------------------
 void __fastcall TForm1::down2Timer(TObject *Sender)
 {
-        paddle2->Top += 10;
+        if( (paddle2->Top + paddle2->Height) < (background->Height - 10)) paddle2->Top += 10;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
