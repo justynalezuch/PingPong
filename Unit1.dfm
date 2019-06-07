@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 2668
-  Top = 20
+  Left = 2257
+  Top = 191
   Width = 1156
   Height = 472
   Caption = 'Form1'
@@ -24,7 +24,7 @@ object Form1: TForm1
     Brush.Color = cl3DLight
   end
   object paddle1: TImage
-    Left = 80
+    Left = 72
     Top = 120
     Width = 20
     Height = 200
@@ -223,7 +223,7 @@ object Form1: TForm1
     Transparent = True
   end
   object paddle2: TImage
-    Left = 1016
+    Left = 1040
     Top = 120
     Width = 20
     Height = 200
@@ -422,8 +422,8 @@ object Form1: TForm1
     Transparent = True
   end
   object ball: TImage
-    Left = 480
-    Top = 200
+    Left = 520
+    Top = 160
     Width = 32
     Height = 32
     AutoSize = True

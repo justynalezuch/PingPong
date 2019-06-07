@@ -82,8 +82,17 @@ void __fastcall TForm1::timer_ballTimer(TObject *Sender)
         {
                 timer_ball->Enabled = true;
                 ball->Visible = false;
-
         }
+        else if (ball->Left <= paddle1->Left + paddle1->Width && ball->Top > paddle1->Top - ball->Width/2 && ball->Top < paddle1->Top + paddle1->Height)
+        {
+                x = -x;
+        }
+        else if (ball->Left + ball->Width >= paddle2->Left && ball->Top > paddle2->Top - ball->Width/2 && ball->Top < paddle2->Top + paddle2->Height)
+        {
+
+               x = -x;
+        }
+
 }
 //---------------------------------------------------------------------------
 
