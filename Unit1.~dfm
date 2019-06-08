@@ -1,8 +1,8 @@
 object Form1: TForm1
-  Left = 2668
-  Top = 20
-  Width = 1156
-  Height = 472
+  Left = 2257
+  Top = 191
+  Width = 1142
+  Height = 446
   Caption = 'Form1'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -18,17 +18,16 @@ object Form1: TForm1
   object background: TShape
     Left = 0
     Top = 0
-    Width = 1140
-    Height = 433
+    Width = 1126
+    Height = 407
     Align = alClient
     Brush.Color = cl3DLight
   end
   object paddle1: TImage
     Left = 72
-    Top = 176
+    Top = 120
     Width = 20
-    Height = 100
-    AutoSize = True
+    Height = 200
     Picture.Data = {
       07544269746D6170A6170000424DA61700000000000036000000280000001400
       000064000000010018000000000070170000230B0000230B0000000000000000
