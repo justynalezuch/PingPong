@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 318
-  Top = 166
+  Left = 246
+  Top = 132
   Width = 1108
   Height = 555
   Caption = 'Form1'
@@ -422,8 +422,8 @@ object Form1: TForm1
     Transparent = True
   end
   object ball: TImage
-    Left = 504
-    Top = 260
+    Left = 512
+    Top = 316
     Width = 32
     Height = 32
     AutoSize = True
@@ -529,6 +529,38 @@ object Form1: TForm1
       FFFF}
     Transparent = True
   end
+  object welcomeText: TLabel
+    Left = 328
+    Top = 96
+    Width = 409
+    Height = 57
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Zagrajmy w PingPonga!'
+    Color = clWhite
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -32
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentColor = False
+    ParentFont = False
+  end
+  object newGame: TButton
+    Left = 336
+    Top = 392
+    Width = 393
+    Height = 57
+    Caption = 'Nowa gra'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    OnClick = newGameClick
+  end
   object up1: TTimer
     Enabled = False
     Interval = 20
@@ -557,10 +589,17 @@ object Form1: TForm1
     Left = 64
     Top = 64
   end
-  object timer_ball: TTimer
+  object timerBall: TTimer
+    Enabled = False
     Interval = 15
-    OnTimer = timer_ballTimer
+    OnTimer = timerBallTimer
     Left = 96
     Top = 24
+  end
+  object ball_acceleration: TTimer
+    Interval = 8000
+    OnTimer = ball_accelerationTimer
+    Left = 96
+    Top = 64
   end
 end

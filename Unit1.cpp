@@ -12,6 +12,7 @@ TForm1 *Form1;
 int x = -8;
 int y = 8;
 
+
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
         : TForm(Owner)
@@ -64,7 +65,7 @@ void __fastcall TForm1::FormKeyUp(TObject *Sender, WORD &Key,
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TForm1::timer_ballTimer(TObject *Sender)
+void __fastcall TForm1::timerBallTimer(TObject *Sender)
 {
         ball->Left += x;
         ball->Top += y;
@@ -79,7 +80,7 @@ void __fastcall TForm1::timer_ballTimer(TObject *Sender)
 
         if(ball->Left >= paddle2->Left+paddle2->Width || ball->Left <= paddle1->Left-paddle1->Width)
         {
-                timer_ball->Enabled = true;
+                timerBall->Enabled = false;
                 ball->Visible = false;
         }
         else if (ball->Left <= paddle1->Left + paddle1->Width && ball->Top > paddle1->Top - ball->Width/2 && ball->Top < paddle1->Top + paddle1->Height)
@@ -87,7 +88,7 @@ void __fastcall TForm1::timer_ballTimer(TObject *Sender)
                 x = -x;
                 if(ball->Top + ball->Height/2 ==  paddle1->Top + paddle1->Height/2)  {
 
-                        x += 8;
+                        x -= 8;
                         y = -y;
                 }
         }
@@ -96,11 +97,27 @@ void __fastcall TForm1::timer_ballTimer(TObject *Sender)
                x = -x;
                if(ball->Top + ball->Height/2 ==  paddle2->Top + paddle2->Height/2 ) {
 
-                        x += 8;
+                        x -= 8;
                         y = -y;
                 }
         }
 
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ball_accelerationTimer(TObject *Sender)
+{
+        x -= 2;
+}
+//---------------------------------------------------------------------------
+
+
+
+void __fastcall TForm1::newGameClick(TObject *Sender)
+{
+        timerBall->Enabled = true;
+        welcomeText->Visible = false;
+        newGame->Visible = false;
 }
 //---------------------------------------------------------------------------
 

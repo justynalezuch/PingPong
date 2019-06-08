@@ -21,7 +21,10 @@ __published:	// IDE-managed Components
         TTimer *up2;
         TTimer *down2;
         TImage *ball;
-        TTimer *timer_ball;
+        TTimer *timerBall;
+        TTimer *ball_acceleration;
+        TLabel *welcomeText;
+        TButton *newGame;
         void __fastcall up1Timer(TObject *Sender);
         void __fastcall down1Timer(TObject *Sender);
         void __fastcall FormKeyDown(TObject *Sender, WORD &Key,
@@ -30,7 +33,9 @@ __published:	// IDE-managed Components
           TShiftState Shift);
         void __fastcall up2Timer(TObject *Sender);
         void __fastcall down2Timer(TObject *Sender);
-        void __fastcall timer_ballTimer(TObject *Sender);
+        void __fastcall timerBallTimer(TObject *Sender);
+        void __fastcall ball_accelerationTimer(TObject *Sender);
+        void __fastcall newGameClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
         __fastcall TForm1(TComponent* Owner);
