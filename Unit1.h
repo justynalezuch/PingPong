@@ -10,7 +10,7 @@
 #include <ExtCtrls.hpp>
 #include <Graphics.hpp>
 //---------------------------------------------------------------------------
-class TForm1 : public TForm
+class TPingPong : public TForm
 {
 __published:	// IDE-managed Components
         TShape *background;
@@ -25,6 +25,11 @@ __published:	// IDE-managed Components
         TTimer *ball_acceleration;
         TLabel *welcomeText;
         TButton *newGame;
+        TLabel *stotsCounter;
+        TLabel *score;
+        TLabel *point;
+        TButton *nextLevel;
+        TButton *newGame2;
         void __fastcall up1Timer(TObject *Sender);
         void __fastcall down1Timer(TObject *Sender);
         void __fastcall FormKeyDown(TObject *Sender, WORD &Key,
@@ -36,12 +41,15 @@ __published:	// IDE-managed Components
         void __fastcall timerBallTimer(TObject *Sender);
         void __fastcall ball_accelerationTimer(TObject *Sender);
         void __fastcall newGameClick(TObject *Sender);
+        void __fastcall nextLevelClick(TObject *Sender);
+        void __fastcall FormCreate(TObject *Sender);
+        void __fastcall newGame2Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
-        __fastcall TForm1(TComponent* Owner);
+        __fastcall TPingPong(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TForm1 *Form1;
+extern PACKAGE TPingPong *PingPong;
 //---------------------------------------------------------------------------
 #endif
  
